@@ -1,0 +1,35 @@
+<section class="instagram-section">
+    <img src="instagram.jpg" alt="Instagram Feed" />
+</section>
+
+<style>
+    .instagram-section {
+        width: 100%;
+        margin-top: 20px;
+        overflow: hidden; /* Hide any overflow */
+        display: flex; /* Center the content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        margin: 0 auto;
+        
+        
+    }
+
+    .instagram-section img {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center content vertically */
+
+        max-width: 100%; /* Set a maximum width */
+        width: 70%; /* Responsive width */
+        height:fit-content; /* Maintain aspect ratio */
+        border-radius: 20px;
+    }
+
+    /* Optional: Add media query for smaller screens */
+    @media (max-width: 768px) {
+        .instagram-section img {
+            max-width: 100%; /* Allow full width on smaller screens */
+        }
+    }
+</style>

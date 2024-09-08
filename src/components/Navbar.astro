@@ -1,0 +1,60 @@
+<section class="nav-bar">
+    <nav>
+        <ul>
+            <img src="favicon.svg" alt="">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/visit">Visit</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>    
+</section>
+
+<style>
+    .nav-bar {
+        background-color: #F9C300;
+    }
+    nav {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        margin-left: 10%;
+        align-items: center;
+    }
+    li {
+        margin-right: 20px;
+        margin-left: 10%;
+    }
+    a {
+        text-decoration: none;
+        color: #000000; /* Darker text */
+        font-weight: bold; /* Bolder text */
+        position: relative; /* Make the pseudo-element relative to the link */
+    }
+    /* Add underline effect with border-radius */
+    a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px; /* Thickness of the underline */
+        background-color: #000000; /* Same color as the text */
+        bottom: -5px; /* Positioning below the text */
+        left: 0;
+        border-radius: 5px; /* Rounded corners for the underline */
+        transition: width 0.4s ease; /* Smooth transition for the width */
+    }
+    /* Hover effect */
+    a:hover::after {
+        width: 100%; /* Extend the underline to the full width */
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+</style>

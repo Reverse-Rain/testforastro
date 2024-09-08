@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .carousel {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden; /* Hide any overflow */
+            border-radius: 20px; /* Apply border-radius to carousel container */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content vertically */
+            /* Default aspect ratio (16:9) */
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            position: absolute; /* Position slides absolutely to fit inside the aspect ratio container */
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%; /* Ensure each slide takes up full width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .slide img {
+            width: 100%; /* Scale to fill the width of the container */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 100%; /* Ensure image fits within the height of the container */
+            object-fit: cover; /* Cover the container while maintaining aspect ratio */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            opacity: 1; /* Visible on hover */
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 1200px) {
+            .carousel {
+                width: 70%; /* Adjust width for larger screens */
+                padding-top: 40%; /* Adjust aspect ratio (e.g., 2.5:1) */
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .carousel {
+                width: 60%; /* Further adjust width for even larger screens */
+                padding-top: 33.33%; /* Adjust aspect ratio (e.g., 3:1) */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide"><img src="image1.jpeg" alt="Image 1" /></div>
+            <div class="slide"><img src="image2.jpeg" alt="Image 2" /></div>
+            <div class="slide"><img src="image3.jpeg" alt="Image 3" /></div>
+            <div class="slide"><img src="image4.jpeg" alt="Image 4" /></div>
+            <div class="slide"><img src="image5.jpeg" alt="Image 5" /></div>
+            <div class="slide"><img src="image6.jpeg" alt="Image 6" /></div>
+            <div class="slide"><img src="image7.jpeg" alt="Image 7" /></div>
+        </div>
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelector('.slides');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+
+            if (!slides || !prevButton || !nextButton) {
+                console.error('Carousel elements not found');
+                return;
+            }
+
+            const slideElements = Array.from(slides.children);
+            const slideCount = slideElements.length;
+            let index = 0;
+
+            function updateSlidePosition() {
+                const slideWidth = (slideElements[0] as HTMLElement).offsetWidth;
+                (slides as HTMLElement).style.transform = `translateX(-${index * slideWidth}px)`;
+            }
+
+            function moveSlide(direction) {
+                const slideWidth = (slideElements[0] as HTMLElement).offsetWidth;
+                index = (index + direction + slideCount) % slideCount;
+                updateSlidePosition();
+            }
+
+            prevButton.addEventListener('click', () => moveSlide(-1));
+            nextButton.addEventListener('click', () => moveSlide(1));
+
+            // Auto-slide functionality
+            setInterval(() => {
+                moveSlide(1);
+            }, 3000); // Change slide every 3 seconds
+        });
+    </script>
+</body>
+</html>

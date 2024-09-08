@@ -1,0 +1,189 @@
+<section class="best-sellers-section">
+    <h2><img src="image.png" alt="Bee Icon" class="bee-icon"> Our Best Sellers</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="product.png" alt="Fresh Honey">
+        <h3>Fresh Honey</h3>
+        <p class="price">$ 250</p>
+        <button class="buy-button">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="product.png" alt="Fresh Honey">
+        <h3>Fresh Honey</h3>
+        <p class="price">$ 250</p>
+        <button class="buy-button">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="product.png" alt="Fresh Honey">
+        <h3>Fresh Honey</h3>
+        <p class="price">$ 250</p>
+        <button class="buy-button">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="product.png" alt="Fresh Honey">
+        <h3>Fresh Honey</h3>
+        <p class="price">$ 250</p>
+        <button class="buy-button">Buy Now</button>
+      </div>
+    </div>
+    <div class="view-products">
+      <button class="view-all-button">View all products</button>
+    </div>
+  </section>
+  
+  <style>
+    .best-sellers-section {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #fff;
+    }
+  
+    .bee-icon {
+      width: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  
+    .best-sellers-section h2 {
+            margin-bottom: 10px;
+
+      font-size: 2rem;
+      margin-bottom: 60px;
+    }
+  
+    .product-grid {
+      display: flex;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7%;
+      justify-content: center;
+      padding: 0 20px;
+      margin-top: 10%;
+    }
+  
+    .product-card {
+      max-height: 215px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      width: 150px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      margin: 0 10px;
+      padding: 20px;
+      
+    }
+  
+    .product-card img {
+      width: 100%;
+    top: -80px; /* Moves the image above the card */
+    position: relative;
+    
+  
+    }
+  
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      position: relative;
+      top: -80px; /* Moves the text above the card */
+    }
+  
+    .price {
+      color: #4caf50;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      position: relative;
+      top: -80px; /* Moves the text above the card */
+
+    }
+  
+    .buy-button {
+      position: relative;
+      top: -80px; /* Moves the button above the card */
+      background-color: #955103;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 20px;
+    }
+  
+    .buy-button:hover {
+      background-color: #e68900;
+    }
+  
+    .view-products {
+      margin-top: 30px;
+    }
+  
+    .view-all-button {
+      background-color: transparent;
+      border: 2px solid #955103;
+      padding: 10px 30px;
+      font-size: 1rem;
+      color: #ff9800;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .view-all-button:hover {
+      background-color: #955103;
+      color: white;
+    }
+  
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Hover effect for product cards */
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for buy button */
+.buy-button {
+  background-color: #955103;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 20px;
+}
+
+.buy-button:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+/* Hover effect for view all button */
+.view-all-button {
+  background-color: transparent;
+  border: 2px solid #955103;
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: #ff9800;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.view-all-button:hover {
+  background-color: #955103;
+  color: white;
+  transform: scale(1.05);
+}
+
+  </style>
+  

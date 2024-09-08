@@ -1,0 +1,183 @@
+<section>
+    <div class="footer">
+        <div class="bottom">
+            <div class="left">
+                <h1>Visit Us</h1>
+            </div>
+        </div>
+        <div class="map-wrapper">
+            <div class="map">
+                <h5>Map location</h5>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019741335639!2d144.9630577159167!3d-37.81421797975198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1b0dfe5%3A0x866aceee4b1fba15!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1621431600654!5m2!1sen!2sau" 
+                    width="100%" 
+                    height="200" 
+                    style="border:0; border-radius: 20px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        
+        <style>
+            .map {
+                width: 100%;
+                height: 250px;
+                border-radius: 20px; /* Apply border-radius to map container */
+                overflow: hidden; /* Ensures the iframe follows the border-radius */
+                z-index: 10;
+                transform: translateY(-10px); /* Slight pop out */
+                transition: all 0.3s ease;
+            }
+        
+            .map:hover {
+                transform: translateY(-20px);
+            }
+        </style>
+        
+
+        <footer>
+            <img src="favicon.svg" alt="Logo">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/visit">Visit</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <div class="line"></div>
+            <h2>&copy; 2024 Qurkus</h2>
+        </footer>
+    </div>
+</section>
+
+<style>
+    .line {
+        width: 80%;
+        margin: 0 auto;
+        height: 2px;
+        background: #00000015;
+    }
+    /* Headings */
+    h1 {
+        color: rgb(247, 170, 56);
+        margin-left: 20px;
+        font-size: 30px;
+
+    }
+
+    h2 {
+        color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    h5 {
+        color: rgb(247, 170, 56);
+        text-align: center;
+    }
+
+    /* Footer layout */
+    .footer {
+        margin-top: 10%;
+        color: rgb(0, 0, 0);
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Flexbox layout for bottom section */
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    /* Left section for the "Visit Us" */
+    .left {
+        flex: 1;
+    }
+
+    .map-wrapper {
+    position: absolute;
+    right: 0; /* Aligns the map fully to the right */
+    top: -0px; /* Moves it upwards for the pop-out effect */
+    z-index: 2; /* Ensures the map stays on top */
+    width: 300px; /* Set a fixed width for the map */
+}
+
+.map {
+    width: 100%; /* Ensure the map takes up the full width of the wrapper */
+    height: 200px;
+    z-index: 10;
+    transform: translateY(-10px); /* Slight pop-out effect */
+    transition: all 0.3s ease;
+}
+
+.map:hover {
+    transform: translateY(-20px);
+}
+
+    /* Navigation list styling */
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    li {
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    /* Logo styling */
+    img {
+        width: 50px;
+        height: 50px;
+        background: #F8C306;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Footer background */
+    footer {        border-radius: 10px;
+
+        background: #F8C306;
+        color: rgb(0, 0, 0);
+        padding: 60px 0 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    a {
+        text-decoration: none;
+        color: #000000; /* Darker text */
+        font-weight: bold; /* Bolder text */
+        position: relative; /* Make the pseudo-element relative to the link */
+    }
+    /* Add underline effect with border-radius */
+    a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px; /* Thickness of the underline */
+        background-color: #000000; /* Same color as the text */
+        bottom: -5px; /* Positioning below the text */
+        left: 0;
+        border-radius: 5px; /* Rounded corners for the underline */
+        transition: width 0.4s ease; /* Smooth transition for the width */
+    }
+    /* Hover effect */
+    a:hover::after {
+        width: 100%; /* Extend the underline to the full width */
+    }
+</style>
